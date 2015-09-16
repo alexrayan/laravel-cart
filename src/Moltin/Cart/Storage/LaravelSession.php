@@ -169,6 +169,15 @@ class LaravelSession implements \Moltin\Cart\StorageInterface
     {
         return $this->identifier;
     }
+    /**
+     * Save current state of the cart (for persistent storage)
+     * 
+     * @return void
+     */
+    public function save()
+    {
+        $this->saveCart();
+    }
 
     protected function saveCart()
     {
